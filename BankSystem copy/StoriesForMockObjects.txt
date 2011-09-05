@@ -1,0 +1,45 @@
+Story 1:
+As a banker, I want to transfer an amount  from one account to another account. I will provide you 
+  -the account Id(string) from which to withdraw, 
+  -the account Id(string) to which to deposit,
+  -the amount
+
+Not in Scope:
+Handling different currency is not in scope of this story. 
+
+Acceptance criteria:
+It should withdraw the amount from the account I want to transfer. 
+It should deposit the amount to the account I want to transfer.
+It should persist the changes in the account.
+
+Story 2:
+As a banker, I want the transfer to handle the current exchange rate for my transaction. 
+
+Acceptance criteria:
+The deposit amount should be converted based on exchange rate.
+The withdrawn amount should be converted based on exchange rate.
+
+Story 3:
+As a banker, I want a console menu to enter in the transfer option and details for the transfer(toAccount,fromAccount,amount). 
+
+Sample Menu:
+>1 - Transfer Funds
+>0 - Exit
+
+>1
+
+>From Account Number: 123
+>To Account Number: 256
+>Amount Value: 23
+>Amount Currency: CAD
+>Completed
+
+
+MOCKITO API:
+create a mock:	
+IAccountRepository accountRepository = mock(IAccountRepository.class);
+
+specify a return value:	when(accountRepository.loadAccount(Ò234Ó)).thenReturn(someAccount));
+
+set expectations:
+verify(accountRepository).delete(Ò234Ó));
